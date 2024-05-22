@@ -7,6 +7,7 @@ import pl.skotniczny.app.user.model.UserNotFoundException;
 import pl.skotniczny.app.user.repository.UserRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @AllArgsConstructor
@@ -22,4 +23,9 @@ public class UserRetriever {
         return userRepository.findByUsername(username)
                 .orElseThrow(() -> new UserNotFoundException("User with username: " + username + " not found"));
     }
+
+    public Optional<User> findByUserId(Long id) {
+        return userRepository.findById(id);
+    }
+
 }
