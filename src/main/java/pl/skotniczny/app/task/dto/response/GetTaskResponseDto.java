@@ -1,11 +1,12 @@
-package pl.skotniczny.app.task.dto.request;
+package pl.skotniczny.app.task.dto.response;
 
 import lombok.Builder;
 
 import java.time.LocalDateTime;
 
 @Builder
-public record CreateTaskRequestDto(
+public record GetTaskResponseDto(
+        Long id,
         String title,
         String description,
         String category,
